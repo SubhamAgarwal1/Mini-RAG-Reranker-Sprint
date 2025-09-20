@@ -65,8 +65,3 @@ The Markdown table at `data/eval_table.md` captures both scores and answers. Wit
 - `scripts/run_ingest.py` – one-shot ingestion
 - `scripts/run_eval.py` – baseline vs hybrid comparison
 - `data/questions.jsonl` – eight evaluation prompts
-
-## What I learned
-
-1. Small domain packs still need careful normalization: without collapsing ligatures and bullet artifacts the answers ballooned with useless boilerplate. A narrow, rule-based summariser keeps responses grounded and short without an LLM.
-2. SQLite FTS5 plus Chroma was a pragmatic mix – handling both dense and lexical signals locally. The hybrid reranker only required a few lines once the scores were normalised and shared chunk IDs were tracked in both stores.
